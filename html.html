@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <title>Document</title>
+          <link rel="stylesheet" href="css.css">
+
+
+</head>
+<body>
+
+<div class="crud">
+
+<div class="head">
+
+<h1>product management</h1>
+
+<p>mange your product esaily. add, 
+     apdete ,serch ,and, delete product
+
+</p>
+
+</div>
+
+
+<div class="inputs">
+<input type="text" id="title" placeholder="title">
+
+<div class="price">
+
+<input onkeyup="getTotal()" type="number" id="price" placeholder="price">
+<input onkeyup="getTotal()" type="number" id="taxes" placeholder="taxes">
+<input onkeyup="getTotal()" type="number" id="ads" placeholder="ads">
+<input onkeyup="getTotal()" type="number" id="discount" placeholder="discount">
+
+<small id="total"></small>
+</div>
+ 
+<input type="number" id="count" placeholder="count">
+<input type="text" id="category" placeholder="category">
+
+<button  id="submit">create</button>
+ 
+</div>
+
+
+<div class="outputs">
+     
+<div class="searchBlock">
+
+<input id="search"  type="text" placeholder="search">
+
+<div class="btnsearch">
+
+<button id="searchTitle">search by title</button>
+
+<button id="searchCategory">search by category</button>
+
+ </div>
+ 
+ </div>
+
+
+
+
+ <table>
+<tr>
+<th>ID</th>
+<th>TITLE</th>
+<th>PRICE</th>
+<th>TAXES</th>
+<th>ads</th>
+ <th>DISCOUNT</th>
+<th>TOTLE</th>
+<th>CATEGORY</th>
+<th>UPDATE</th>
+<th>DELETE</th>
+
+</tr>
+
+<tr>
+
+<td>1</td>
+<td>oppo</td>
+<td>230000</td>
+<td>100</td>
+<td>100</td>
+<td>199</td>
+<td>44444</td>
+<td>phone</td>
+<td> <button id="update">UPDATE</button></td>
+<td><button id="delete">DELETE</button></td>
+
+ </tr>
+
+
+
+
+
+</table>
+
+
+
+ </div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     <script src="js.js"></script>
+</body>
+</html>
