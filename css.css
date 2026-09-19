@@ -104,3 +104,11 @@ button:hover{
   td, th {
  padding: 5px;
   }
+
+
+  #deleteAll{
+
+ width: 100%;
+ 
+ margin: 15px 0;
+   }
