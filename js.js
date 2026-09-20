@@ -114,6 +114,18 @@ document.getElementById("tbody").innerHTML = table ;
 
 document.getElementById("countProduct").innerHTML = dataPro.length;
 
+let btnDelete = document.getElementById("deleteAll");
+
+
+if(dataPro.length > 0 ){
+
+btnDelete.style.display = "block";
+
+}else{
+    btnDelete.style.display = "none";
+
+}
+
 
 }  showData();
 
