@@ -8,6 +8,10 @@ let count = document.getElementById("count");
 let category = document.getElementById("category");
 let submit = document.getElementById("submit");
 
+let mood = "create";
+ let tmp;
+
+
 function getTotal() {
     
 if(price.value !=""){
@@ -55,10 +59,28 @@ else{
     if(title.value !="" && price.value !="" &&  category.value !=""){
 
  
-        for(let y = 0; y < count.value; y++){
-            
-        dataPro.push(newPro);
-        }
+      if( mood === "create"){
+
+          for(let y = 0; y < count.value; y++){
+
+        dataPro.push(newPro);     
+         }
+
+     } else{
+     
+        dataPro[tmp] = newPro ;
+
+            mood ="create";
+            submit.innerHTML="create";
+            count.style.display = "block";
+
+     }
+
+
+
+
+
+
 
         clearData();
 
@@ -101,7 +123,7 @@ for(let x = 0; x < dataPro.length; x++){
 <td>${dataPro[x].discount}</td>
 <td>${dataPro[x].total}</td>
 <td>${dataPro[x].category}</td>
-<td> <button id="update">UPDATE</button></td>
+<td> <button onclick ="updateData(${x})" id="update">UPDATE</button></td>
 <td><button onclick = "deleteData (${x}) "id="delete">DELETE</button></td>
 
  </tr>
@@ -148,5 +170,27 @@ dataPro.splice(0, dataPro.length);
 localStorage.setItem("product" , JSON.stringify(dataPro));
  
  showData();
+
+}
+
+
+ 
+function updateData(x){
+
+title.value = dataPro[x].title;
+price.value = dataPro[x].price;
+taxes.value = dataPro[x].taxes;
+ads.value = dataPro[x].ads;
+discount.value = dataPro[x].discount;
+getTotal();
+count.style.display ="none"
+category.value = dataPro[x].category;
+
+submit.innerHTML = "UPDATE";
+
+mood = "update";
+
+tmp = x;
+
 
 }
