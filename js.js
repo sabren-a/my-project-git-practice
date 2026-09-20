@@ -192,5 +192,14 @@ mood = "update";
 
 tmp = x;
 
+scroll({
+ top : 0,
 
+ behavior : "smooth",
+
+
+})
+
+
+ 
 }
