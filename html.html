@@ -49,13 +49,13 @@
      
 <div class="searchBlock">
 
-<input id="search"  type="text" placeholder="search">
+<input onkeyup="searchData (this.value)" id="search"  type="text" placeholder="search">
 
 <div class="btnsearch">
 
-<button id="searchTitle">search by title</button>
+<button onclick="gitSearchMood(this)" id="searchTitle">search by title</button>
 
-<button id="searchCategory">search by category</button>
+<button onclick="gitSearchMood(this)"  id="searchCategory">search by category</button>
 
  </div>
 

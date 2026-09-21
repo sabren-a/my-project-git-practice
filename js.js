@@ -10,7 +10,7 @@ let submit = document.getElementById("submit");
 
 let mood = "create";
  let tmp;
-
+let searchMood;
 
 function getTotal() {
     
@@ -202,4 +202,101 @@ scroll({
 
 
  
+}
+
+
+function gitSearchMood(id){
+
+    let search = document.getElementById("search")
+
+ if(id.id === "searchTitle"){
+
+searchMood = "title";
+
+search.placeholder = "search by title"
+
+ }else{
+
+    searchMood = "category";
+
+    search.placeholder = "search by category"
+
+ }
+
+ search.value ="";
+
+ search.focus();
+
+ showData();
+
+
+}
+
+function searchData (value) {
+
+    let table = "";
+
+if(searchMood == "title"){
+
+    for(let y = 0; y < dataPro.length; y++){
+
+if(dataPro[y].title.includes(value)){
+
+ 
+ table += `
+ 
+ <tr>
+
+<td>${y + 1}</td>
+<td>${dataPro[y].title}</td>
+<td>${dataPro[y].price}</td>
+<td>${dataPro[y].taxes}</td>
+<td>${dataPro[y].ads}</td>
+<td>${dataPro[y].discount}</td>
+<td>${dataPro[y].total}</td>
+<td>${dataPro[y].category}</td>
+<td> <button onclick ="updateData(${y})" id="update">UPDATE</button></td>
+<td><button onclick = "deleteData (${y}) "id="delete">DELETE</button></td>
+
+ </tr>
+
+ `
+}
+
+    }
+
+}else{
+
+ for(let y = 0; y < dataPro.length; y++){
+
+if(dataPro[y].category.includes(value)){
+
+ table += `
+ 
+ <tr>
+
+<td>${y + 1}</td>
+<td>${dataPro[y].title}</td>
+<td>${dataPro[y].price}</td>
+<td>${dataPro[y].taxes}</td>
+<td>${dataPro[y].ads}</td>
+<td>${dataPro[y].discount}</td>
+<td>${dataPro[y].total}</td>
+<td>${dataPro[y].category}</td>
+<td> <button onclick ="updateData(${y})" id="update">UPDATE</button></td>
+<td><button onclick = "deleteData (${y}) "id="delete">DELETE</button></td>
+
+ </tr>
+
+ `
+}
+
+    }
+
+
+
+}
+
+document.getElementById("tbody").innerHTML = table;
+    
 }
